@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// indexPath.row == column
+// indexPath.section == row
+
 import UIKit
 
 class CollectionViewController: UIViewController {
@@ -32,10 +35,6 @@ class CollectionViewController: UIViewController {
       self.prepareDataFromDelegates()
       self.gridLayout.numberOfColumns = attributeTitleArray.count + 1
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        // your code here
-        self.select(value: .four, forRow: 4)
-      }
       
     }
 
@@ -89,7 +88,8 @@ extension CollectionViewController: UICollectionViewDataSource {
             else {
               let indexCount = ((indexPath.section - 1) * self.attributeTitleArray.count ) + indexPath.row - 1
               let scoringData = gridDataSource[indexCount]
-              cell.contentLabel.text = "\(indexCount)"
+              cell.contentLabel.text = "R \(scoringData.rowIndex) S \(scoringData.sectionIndex) "
+              
                cell.setCirlceView(color: scoringData.scoreColor())
               cell.contentLabel.font = UIFont.systemFont(ofSize: 13.0)
             }
@@ -105,11 +105,13 @@ extension CollectionViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if indexPath.row == 1 && indexPath.section > 0 && indexPath.section < ratingSystemValues.count + 1{
       
+      let scoringData = ratingSystemValues[indexPath.section - 1]
+      self.select(value: scoringData.score, forRow: scoringData.rowIndex)
     }
     else{
-     let indexCount = ((indexPath.section - 1) * self.attributeTitleArray.count ) + indexPath.row - 1
-    let scoring = gridDataSource[indexCount]
-    print("\(indexCount) - \(scoring.score)")
+      print("ind \(indexPath.row) se \(indexPath.section)")
+    let scoring = ratingSystemValues[indexPath.section-1]
+    select(value: scoring.score,section: indexPath.section , forRow: indexPath.row )
     }
   }
 }
@@ -125,22 +127,22 @@ extension CollectionViewController {
     
     for var i in 0..<phaseCount {
       for var j in 0..<attributeCoutn{
-        let newScoringData = ScoringDataModel(rowIndex: i, columnIndex: j)
+        let newScoringData = ScoringDataModel(rowIndex: j + 1, sectionIndex: i + 1)
         gridDataSource.append(newScoringData)
         j = j + 1
       }
       i = i + 1
     }
 
-    let score1 = ScoringDataModel.init(rowIndex: 1, columnIndex: 1)
+    let score1 = ScoringDataModel.init(rowIndex: 1, sectionIndex: 1)
     score1.score = .one
-    let score2 = ScoringDataModel.init(rowIndex: 2, columnIndex: 1)
+    let score2 = ScoringDataModel.init(rowIndex: 2, sectionIndex: 1)
     score2.score = .two
-    let score3 = ScoringDataModel.init(rowIndex: 3, columnIndex: 1)
+    let score3 = ScoringDataModel.init(rowIndex: 3, sectionIndex: 1)
     score3.score = .three
-    let score4 = ScoringDataModel.init(rowIndex: 4, columnIndex: 1)
+    let score4 = ScoringDataModel.init(rowIndex: 4, sectionIndex: 1)
     score4.score = .four
-    let score5 = ScoringDataModel.init(rowIndex: 5, columnIndex: 1)
+    let score5 = ScoringDataModel.init(rowIndex: 5, sectionIndex: 1)
     score5.score = .five
 
     ratingSystemValues = [score1, score2, score3, score4, score5]
@@ -148,7 +150,7 @@ extension CollectionViewController {
   
   func select(value:ScoringValue,forRow:Int){
     gridDataSource = gridDataSource.map({ (scoringDataModel:ScoringDataModel) -> ScoringDataModel in
-      if scoringDataModel.rowIndex == forRow && scoringDataModel.columnIndex > 1 {
+      if scoringDataModel.sectionIndex == forRow && scoringDataModel.sectionIndex > 0 {
          scoringDataModel.score = value
         return scoringDataModel
       }
@@ -159,4 +161,20 @@ extension CollectionViewController {
     })
     collectionView.reloadData()
 }
+  
+  func select(value:ScoringValue,section:Int, forRow:Int){
+    gridDataSource = gridDataSource.map({ (scoringDataModel:ScoringDataModel) -> ScoringDataModel in
+      if scoringDataModel.rowIndex == forRow {
+      if scoringDataModel.sectionIndex == section {
+        scoringDataModel.score = value
+        print("updating for \(forRow) \(section)")
+      }
+      else{
+        scoringDataModel.score = .unassigned
+      }
+    }
+      return scoringDataModel
+    })
+    collectionView.reloadData()
+  }
 }

@@ -13,6 +13,12 @@ class ContentCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var circleView:UIView!
   
+  override func prepareForReuse() {
+    self.layer.borderColor = UIColor.black.cgColor
+    self.layer.borderWidth = 1.0
+    setCirlceView(color: UIColor.clear)
+    self.backgroundColor = UIColor.white
+  }
     override func awakeFromNib() {
         super.awakeFromNib()
       self.layer.borderColor = UIColor.black.cgColor

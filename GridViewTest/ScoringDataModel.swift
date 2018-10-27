@@ -15,17 +15,17 @@ enum ScoringValue:Int{
 
 class ScoringDataModel {
   var rowIndex = 0
-  var columnIndex = 0
+  var sectionIndex = 0
   var score: ScoringValue = .unassigned
   var rowAttribute:String = ""
   var sectionAttribute:String = ""
   var reasons:[String] = []
   
   
-  convenience init(rowIndex:Int, columnIndex:Int) {
+  convenience init(rowIndex:Int, sectionIndex:Int) {
     self.init()
     self.rowIndex = rowIndex
-    self.columnIndex = columnIndex
+    self.sectionIndex = sectionIndex
     
   }
   
