@@ -14,6 +14,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var circleView:UIView!
   
   override func prepareForReuse() {
+    self.contentLabel.text = ""
     self.layer.borderColor = UIColor.black.cgColor
     self.layer.borderWidth = 1.0
     setCirlceView(color: UIColor.clear)
@@ -25,6 +26,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
       self.layer.borderWidth = 1.0
       setCirlceView(color: UIColor.clear)
       self.backgroundColor = UIColor.white
+      
         // Initialization code
     }
 

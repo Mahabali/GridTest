@@ -191,11 +191,11 @@ extension CustomCollectionViewLayout {
             text = "Content"
         }
       if columnIndex == 0 {
-        return CGSize(width: 90, height: 60)
+        return CGSize(width: 100, height: 75)
       }
       let size: CGSize = text.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
         let width: CGFloat = size.width + 16
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: 75, height: 75)
     }
 
 }

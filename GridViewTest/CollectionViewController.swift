@@ -88,8 +88,8 @@ extension CollectionViewController: UICollectionViewDataSource {
             else {
               let indexCount = ((indexPath.section - 1) * self.attributeTitleArray.count ) + indexPath.row - 1
               let scoringData = gridDataSource[indexCount]
-              cell.contentLabel.text = "R \(scoringData.rowIndex) S \(scoringData.sectionIndex) "
-              
+             // cell.contentLabel.text = "R \(scoringData.rowIndex) S \(scoringData.sectionIndex) "
+              cell.contentLabel.text = ""
                cell.setCirlceView(color: scoringData.scoreColor())
               cell.contentLabel.font = UIFont.systemFont(ofSize: 13.0)
             }
@@ -110,8 +110,10 @@ extension CollectionViewController: UICollectionViewDelegate {
     }
     else{
       print("ind \(indexPath.row) se \(indexPath.section)")
+      if (indexPath.section - 1) < ratingSystemValues.count {
     let scoring = ratingSystemValues[indexPath.section-1]
     select(value: scoring.score,section: indexPath.section , forRow: indexPath.row )
+      }
     }
   }
 }
