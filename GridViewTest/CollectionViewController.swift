@@ -24,6 +24,7 @@ class CollectionViewController: UIViewController {
     var attributeTitleArray:[String] = []
   var ratingSystemValues:[ScoringDataModel] = []
     var gridDataSource:[ScoringDataModel] = []
+  var selectedData:ScoringDataModel? = nil
     @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var gridLayout:CustomCollectionViewLayout!
 
@@ -37,6 +38,15 @@ class CollectionViewController: UIViewController {
       
       
     }
+  
+  func presentReasonsView(selected:ScoringDataModel){
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let controller = storyboard.instantiateViewController(withIdentifier: "ReasonsViewController") as! ReasonsViewController
+    controller.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+    controller.delegate = self
+    controller.summaryArray = selected.reasons
+    self.present(controller, animated: true, completion: nil)
+  }
 
 }
 
@@ -113,6 +123,11 @@ extension CollectionViewController: UICollectionViewDelegate {
       if (indexPath.section - 1) < ratingSystemValues.count {
     let scoring = ratingSystemValues[indexPath.section-1]
     select(value: scoring.score,section: indexPath.section , forRow: indexPath.row )
+        if scoring.score == .two || scoring.score == .one {
+          selectedData = scoring
+          
+          presentReasonsView(selected: gridData(section: indexPath.section, row: indexPath.row)!)
+        }
       }
     }
   }
@@ -179,4 +194,19 @@ extension CollectionViewController {
     })
     collectionView.reloadData()
   }
+}
+extension CollectionViewController:ReasonSubmitted{
+  func reasonSelected(reasons: [String]) {
+    if selectedData != nil {
+      if let index = gridDataSource.index(where: {$0.rowIndex == selectedData?.rowIndex && $0.sectionIndex == selectedData?.sectionIndex}) {
+        gridDataSource[index].reasons = reasons
+      }
+    }
+    let _grid = gridDataSource
+  }
+  
+  func gridData(section:Int,row:Int) -> ScoringDataModel? {
+    return gridDataSource.first(where:{$0.rowIndex == selectedData?.rowIndex && $0.sectionIndex == selectedData?.sectionIndex}) ?? nil
+  }
+  
 }

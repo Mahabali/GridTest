@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D82385EB2187094B008892E1 /* ReasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82385EA2187094B008892E1 /* ReasonsViewController.swift */; };
+		D82385EE2187132F008892E1 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82385EC2187132E008892E1 /* HeaderView.xib */; };
+		D82385EF2187132F008892E1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82385ED2187132E008892E1 /* HeaderView.swift */; };
+		D82385F22187166F008892E1 /* ReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82385F02187166F008892E1 /* ReasonTableViewCell.swift */; };
+		D82385F32187166F008892E1 /* ReasonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82385F12187166F008892E1 /* ReasonTableViewCell.xib */; };
+		D82385F621871687008892E1 /* ReasonSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82385F421871687008892E1 /* ReasonSummaryTableViewCell.swift */; };
+		D82385F721871687008892E1 /* ReasonSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */; };
+		D82385F921871A50008892E1 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82385F821871A50008892E1 /* Checkbox.swift */; };
 		D8B0807E217B82B400E090FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B0807D217B82B400E090FD /* AppDelegate.swift */; };
 		D8B08080217B82B400E090FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B0807F217B82B400E090FD /* ViewController.swift */; };
 		D8B08083217B82B400E090FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B08081217B82B400E090FD /* Main.storyboard */; };
@@ -16,11 +24,18 @@
 		D8B08092217B830500E090FD /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B08090217B830500E090FD /* ContentCollectionViewCell.xib */; };
 		D8B08094217B832200E090FD /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B08093217B832200E090FD /* CustomCollectionViewLayout.swift */; };
 		D8B08096217B833400E090FD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B08095217B833400E090FD /* CollectionViewController.swift */; };
-		D8B08098217B835A00E090FD /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B08097217B835A00E090FD /* CollectionViewController.xib */; };
 		D8B0809A217B890400E090FD /* ScoringDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B08099217B890400E090FD /* ScoringDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D82385EA2187094B008892E1 /* ReasonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonsViewController.swift; sourceTree = "<group>"; };
+		D82385EC2187132E008892E1 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		D82385ED2187132E008892E1 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		D82385F02187166F008892E1 /* ReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReasonTableViewCell.swift; path = Cells/ReasonTableViewCell.swift; sourceTree = "<group>"; };
+		D82385F12187166F008892E1 /* ReasonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReasonTableViewCell.xib; path = Cells/ReasonTableViewCell.xib; sourceTree = "<group>"; };
+		D82385F421871687008892E1 /* ReasonSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReasonSummaryTableViewCell.swift; path = Cells/ReasonSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReasonSummaryTableViewCell.xib; path = Cells/ReasonSummaryTableViewCell.xib; sourceTree = "<group>"; };
+		D82385F821871A50008892E1 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		D8B0807A217B82B400E090FD /* GridViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B0807D217B82B400E090FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B0807F217B82B400E090FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,7 +47,6 @@
 		D8B08090217B830500E090FD /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 		D8B08093217B832200E090FD /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D8B08095217B833400E090FD /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		D8B08097217B835A00E090FD /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
 		D8B08099217B890400E090FD /* ScoringDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,13 +85,20 @@
 				D8B0808F217B830500E090FD /* ContentCollectionViewCell.swift */,
 				D8B08093217B832200E090FD /* CustomCollectionViewLayout.swift */,
 				D8B08095217B833400E090FD /* CollectionViewController.swift */,
-				D8B08097217B835A00E090FD /* CollectionViewController.xib */,
+				D82385EA2187094B008892E1 /* ReasonsViewController.swift */,
+				D82385ED2187132E008892E1 /* HeaderView.swift */,
+				D82385EC2187132E008892E1 /* HeaderView.xib */,
 				D8B08090217B830500E090FD /* ContentCollectionViewCell.xib */,
 				D8B08081217B82B400E090FD /* Main.storyboard */,
 				D8B08084217B82B500E090FD /* Assets.xcassets */,
 				D8B08086217B82B500E090FD /* LaunchScreen.storyboard */,
 				D8B08089217B82B500E090FD /* Info.plist */,
 				D8B08099217B890400E090FD /* ScoringDataModel.swift */,
+				D82385F02187166F008892E1 /* ReasonTableViewCell.swift */,
+				D82385F12187166F008892E1 /* ReasonTableViewCell.xib */,
+				D82385F421871687008892E1 /* ReasonSummaryTableViewCell.swift */,
+				D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */,
+				D82385F821871A50008892E1 /* Checkbox.swift */,
 			);
 			path = GridViewTest;
 			sourceTree = "<group>";
@@ -141,8 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B08092217B830500E090FD /* ContentCollectionViewCell.xib in Resources */,
-				D8B08098217B835A00E090FD /* CollectionViewController.xib in Resources */,
+				D82385EE2187132F008892E1 /* HeaderView.xib in Resources */,
 				D8B08088217B82B500E090FD /* LaunchScreen.storyboard in Resources */,
+				D82385F721871687008892E1 /* ReasonSummaryTableViewCell.xib in Resources */,
+				D82385F32187166F008892E1 /* ReasonTableViewCell.xib in Resources */,
 				D8B08085217B82B500E090FD /* Assets.xcassets in Resources */,
 				D8B08083217B82B400E090FD /* Main.storyboard in Resources */,
 			);
@@ -155,12 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82385F621871687008892E1 /* ReasonSummaryTableViewCell.swift in Sources */,
 				D8B08080217B82B400E090FD /* ViewController.swift in Sources */,
 				D8B0809A217B890400E090FD /* ScoringDataModel.swift in Sources */,
+				D82385EB2187094B008892E1 /* ReasonsViewController.swift in Sources */,
+				D82385F921871A50008892E1 /* Checkbox.swift in Sources */,
 				D8B0807E217B82B400E090FD /* AppDelegate.swift in Sources */,
+				D82385F22187166F008892E1 /* ReasonTableViewCell.swift in Sources */,
 				D8B08094217B832200E090FD /* CustomCollectionViewLayout.swift in Sources */,
 				D8B08091217B830500E090FD /* ContentCollectionViewCell.swift in Sources */,
 				D8B08096217B833400E090FD /* CollectionViewController.swift in Sources */,
+				D82385EF2187132F008892E1 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
