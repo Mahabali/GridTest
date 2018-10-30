@@ -37,7 +37,7 @@
                                 <rect key="frame" x="458" y="369" width="108" height="30"/>
                                 <state key="normal" title="Open Grid View"/>
                                 <connections>
-                                    <segue destination="lOT-dE-Ci5" kind="show" id="JtX-V7-5Zp"/>
+                                    <segue destination="4zC-YD-JV6" kind="show" id="vV2-qF-3Yb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oti-ia-WH9">
-                                <rect key="frame" x="100" y="120" width="824" height="548"/>
+                                <rect key="frame" x="100" y="70" width="914" height="598"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="Rst-cR-M2v" customClass="CustomCollectionViewLayout" customModule="GridViewTest" customModuleProvider="target"/>
                                 <connections>
@@ -79,6 +79,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveData" destination="lOT-dE-Ci5" eventType="touchUpInside" id="yA3-2d-TkX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,7 +91,7 @@
                             <constraint firstItem="7SP-Sc-QXN" firstAttribute="bottom" secondItem="RI2-N6-utq" secondAttribute="bottom" constant="50" id="aoc-Je-eaJ"/>
                             <constraint firstItem="oti-ia-WH9" firstAttribute="leading" secondItem="7SP-Sc-QXN" secondAttribute="leading" constant="100" id="gu7-jK-koz"/>
                             <constraint firstItem="RI2-N6-utq" firstAttribute="centerX" secondItem="3LT-rB-sjh" secondAttribute="centerX" id="lRh-Rd-oJ1"/>
-                            <constraint firstItem="7SP-Sc-QXN" firstAttribute="trailing" secondItem="oti-ia-WH9" secondAttribute="trailing" constant="100" id="svE-H3-gdw"/>
+                            <constraint firstItem="7SP-Sc-QXN" firstAttribute="trailing" secondItem="oti-ia-WH9" secondAttribute="trailing" constant="10" id="svE-H3-gdw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7SP-Sc-QXN"/>
                     </view>
@@ -98,6 +101,42 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMd-l9-k9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1450" y="-41"/>
+        </scene>
+        <!--Dashboard View Controller-->
+        <scene sceneID="fsS-SN-a3i">
+            <objects>
+                <viewController storyboardIdentifier="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4zC-YD-JV6" customClass="DashboardViewController" customModule="GridViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ttF-Ie-4FY">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TXg-WI-3bD">
+                                <rect key="frame" x="100" y="120" width="914" height="548"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Ntx-pj-Dj9" customClass="CustomCollectionViewLayout" customModule="GridViewTest" customModuleProvider="target"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4zC-YD-JV6" id="RVp-JO-0Mv"/>
+                                    <outlet property="delegate" destination="4zC-YD-JV6" id="xk3-B6-7uT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uWs-mZ-ySv" firstAttribute="trailing" secondItem="TXg-WI-3bD" secondAttribute="trailing" constant="10" id="YMp-GS-fZ4"/>
+                            <constraint firstItem="TXg-WI-3bD" firstAttribute="leading" secondItem="uWs-mZ-ySv" secondAttribute="leading" constant="100" id="gQ2-b0-H11"/>
+                            <constraint firstItem="uWs-mZ-ySv" firstAttribute="bottom" secondItem="TXg-WI-3bD" secondAttribute="bottom" constant="100" id="oXn-n4-kM6"/>
+                            <constraint firstItem="TXg-WI-3bD" firstAttribute="top" secondItem="uWs-mZ-ySv" secondAttribute="top" constant="50" id="rYh-Kj-vGk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uWs-mZ-ySv"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="TXg-WI-3bD" id="AqJ-Aa-HiK"/>
+                        <outlet property="gridLayout" destination="Ntx-pj-Dj9" id="YVE-Ye-zU2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7SZ-Rz-DBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1450" y="-41"/>
         </scene>

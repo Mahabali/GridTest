@@ -15,6 +15,7 @@
 		D82385F621871687008892E1 /* ReasonSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82385F421871687008892E1 /* ReasonSummaryTableViewCell.swift */; };
 		D82385F721871687008892E1 /* ReasonSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */; };
 		D82385F921871A50008892E1 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82385F821871A50008892E1 /* Checkbox.swift */; };
+		D865FC282188281D00BB2FD1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865FC272188281D00BB2FD1 /* DashboardViewController.swift */; };
 		D8B0807E217B82B400E090FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B0807D217B82B400E090FD /* AppDelegate.swift */; };
 		D8B08080217B82B400E090FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B0807F217B82B400E090FD /* ViewController.swift */; };
 		D8B08083217B82B400E090FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B08081217B82B400E090FD /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		D82385F421871687008892E1 /* ReasonSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReasonSummaryTableViewCell.swift; path = Cells/ReasonSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReasonSummaryTableViewCell.xib; path = Cells/ReasonSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		D82385F821871A50008892E1 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		D865FC272188281D00BB2FD1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		D8B0807A217B82B400E090FD /* GridViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B0807D217B82B400E090FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B0807F217B82B400E090FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				D82385F421871687008892E1 /* ReasonSummaryTableViewCell.swift */,
 				D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */,
 				D82385F821871A50008892E1 /* Checkbox.swift */,
+				D865FC272188281D00BB2FD1 /* DashboardViewController.swift */,
 			);
 			path = GridViewTest;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				D82385F921871A50008892E1 /* Checkbox.swift in Sources */,
 				D8B0807E217B82B400E090FD /* AppDelegate.swift in Sources */,
 				D82385F22187166F008892E1 /* ReasonTableViewCell.swift in Sources */,
+				D865FC282188281D00BB2FD1 /* DashboardViewController.swift in Sources */,
 				D8B08094217B832200E090FD /* CustomCollectionViewLayout.swift in Sources */,
 				D8B08091217B830500E090FD /* ContentCollectionViewCell.swift in Sources */,
 				D8B08096217B833400E090FD /* CollectionViewController.swift in Sources */,

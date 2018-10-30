@@ -35,8 +35,6 @@ class CollectionViewController: UIViewController {
                                 forCellWithReuseIdentifier: contentCellIdentifier)
       self.prepareDataFromDelegates()
       self.gridLayout.numberOfColumns = attributeTitleArray.count + 1
-      
-      
     }
   
   func presentReasonsView(selected:ScoringDataModel){
@@ -46,6 +44,21 @@ class CollectionViewController: UIViewController {
     controller.delegate = self
     controller.summaryArray = selected.reasons
     self.present(controller, animated: true, completion: nil)
+  }
+  
+  @IBAction func saveData(){
+    let markedValues = gridDataSource.filter { (scoringDataModel) -> Bool in
+      if scoringDataModel.score != .unassigned && scoringDataModel.rowIndex > 1 {
+        return true
+      }
+      return false
+      }.sorted { (scoreA, scoreB) -> Bool in
+        if scoreA.rowIndex < scoreB.rowIndex {
+          return true
+        }
+        return false
+    }
+    
   }
 
 }
@@ -98,8 +111,8 @@ extension CollectionViewController: UICollectionViewDataSource {
             else {
               let indexCount = ((indexPath.section - 1) * self.attributeTitleArray.count ) + indexPath.row - 1
               let scoringData = gridDataSource[indexCount]
-             // cell.contentLabel.text = "R \(scoringData.rowIndex) S \(scoringData.sectionIndex) "
-              cell.contentLabel.text = ""
+              cell.contentLabel.text = "R \(scoringData.rowIndex) S \(scoringData.sectionIndex) "
+              //cell.contentLabel.text = ""
                cell.setCirlceView(color: scoringData.scoreColor())
               cell.contentLabel.font = UIFont.systemFont(ofSize: 13.0)
             }
@@ -124,8 +137,7 @@ extension CollectionViewController: UICollectionViewDelegate {
     let scoring = ratingSystemValues[indexPath.section-1]
     select(value: scoring.score,section: indexPath.section , forRow: indexPath.row )
         if scoring.score == .two || scoring.score == .one {
-          selectedData = scoring
-          
+          selectedData = gridData(section: indexPath.section, row: indexPath.row)!
           presentReasonsView(selected: gridData(section: indexPath.section, row: indexPath.row)!)
         }
       }
@@ -145,6 +157,10 @@ extension CollectionViewController {
     for var i in 0..<phaseCount {
       for var j in 0..<attributeCoutn{
         let newScoringData = ScoringDataModel(rowIndex: j + 1, sectionIndex: i + 1)
+        if j > 0 {
+          newScoringData.rowAttribute = self.attributeTitleArray[j]
+          newScoringData.sectionAttribute = self.phaseTitleArray[2]
+        }
         gridDataSource.append(newScoringData)
         j = j + 1
       }
@@ -180,6 +196,7 @@ extension CollectionViewController {
 }
   
   func select(value:ScoringValue,section:Int, forRow:Int){
+
     gridDataSource = gridDataSource.map({ (scoringDataModel:ScoringDataModel) -> ScoringDataModel in
       if scoringDataModel.rowIndex == forRow {
       if scoringDataModel.sectionIndex == section {
@@ -202,11 +219,10 @@ extension CollectionViewController:ReasonSubmitted{
         gridDataSource[index].reasons = reasons
       }
     }
-    let _grid = gridDataSource
   }
   
   func gridData(section:Int,row:Int) -> ScoringDataModel? {
-    return gridDataSource.first(where:{$0.rowIndex == selectedData?.rowIndex && $0.sectionIndex == selectedData?.sectionIndex}) ?? nil
+    return gridDataSource.first(where:{$0.rowIndex == row && $0.sectionIndex == section}) ?? nil
   }
   
 }
