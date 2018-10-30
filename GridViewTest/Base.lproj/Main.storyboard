@@ -267,6 +267,7 @@
                     <connections>
                         <outlet property="reasonSummaryTableView" destination="5YW-Vl-qqw" id="7AF-Bj-uP3"/>
                         <outlet property="reasonTableView" destination="vSI-wj-v2u" id="lZZ-kZ-Z3z"/>
+                        <outlet property="submitButton" destination="QWS-wK-Y7A" id="Wig-Lq-stv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sa1-OM-4TE" userLabel="First Responder" sceneMemberID="firstResponder"/>

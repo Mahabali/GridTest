@@ -21,10 +21,12 @@ class CollectionViewController: UIViewController {
 
     let contentCellIdentifier = "ContentCellIdentifier"
     var phaseTitleArray:[String] = []
+    var phaseId:Int = -1
     var attributeTitleArray:[String] = []
   var ratingSystemValues:[ScoringDataModel] = []
     var gridDataSource:[ScoringDataModel] = []
   var selectedData:ScoringDataModel? = nil
+  weak var dashboardVC:DashboardViewController?
     @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var gridLayout:CustomCollectionViewLayout!
 
@@ -58,7 +60,8 @@ class CollectionViewController: UIViewController {
         }
         return false
     }
-    
+    self.dashboardVC?.savePhaseData(phaseData: markedValues, phase: phaseTitleArray[2], phaseId: phaseId)
+    self.dismiss(animated: false, completion: nil)
   }
 
 }
@@ -111,7 +114,7 @@ extension CollectionViewController: UICollectionViewDataSource {
             else {
               let indexCount = ((indexPath.section - 1) * self.attributeTitleArray.count ) + indexPath.row - 1
               let scoringData = gridDataSource[indexCount]
-              cell.contentLabel.text = "R \(scoringData.rowIndex) S \(scoringData.sectionIndex) "
+              //cell.contentLabel.text = "R \(scoringData.rowIndex) S \(scoringData.sectionIndex) "
               //cell.contentLabel.text = ""
                cell.setCirlceView(color: scoringData.scoreColor())
               cell.contentLabel.font = UIFont.systemFont(ofSize: 13.0)
@@ -148,7 +151,6 @@ extension CollectionViewController: UICollectionViewDelegate {
 extension CollectionViewController {
   
   func prepareDataFromDelegates () {
-    self.phaseTitleArray = ["","","PH3","","", ""]
     self.attributeTitleArray = ["AT1","AT2","AT3","AT4","AT5", "AT6"]
     self.attributeTitleArray.insert("Score", at: 0)
     let phaseCount = self.phaseTitleArray.count

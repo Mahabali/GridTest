@@ -29,6 +29,7 @@ class ReasonsViewController: UIViewController {
   weak var delegate:ReasonSubmitted? = nil
   var reasonsArray:[ReasonModel] = []
   var summaryArray:[String] = []
+  @IBOutlet var submitButton:UIButton!
   @IBAction func submitAction(){
     delegate?.reasonSelected(reasons: summaryArray)
     self.dismiss(animated: true, completion: nil)
@@ -44,6 +45,9 @@ class ReasonsViewController: UIViewController {
       reasonTableView.sectionHeaderHeight = 40.0
       reasonSummaryTableView.rowHeight = 50.0
       prepareData()
+      if delegate == nil {
+        submitButton.isHidden = true
+      }
         // Do any additional setup after loading the view.
     }
   
@@ -101,6 +105,9 @@ extension ReasonsViewController:UITableViewDataSource,UITableViewDelegate{
       cell.checkBox.row = indexPath.row
       cell.checkBox.isRow = true
       cell.checkBox.addTarget(self, action: #selector(checkBoxTapped(sender:)), for: .valueChanged)
+      if delegate == nil {
+        cell.checkBox.isUserInteractionEnabled = false
+      }
       return cell
     }
     else{
