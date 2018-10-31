@@ -32,7 +32,7 @@ class CollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Scoring"
         collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: contentCellIdentifier)
       self.prepareDataFromDelegates()

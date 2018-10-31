@@ -36,4 +36,9 @@ class ContentCollectionViewCell: UICollectionViewCell {
     circleView.layer.cornerRadius = 15.0
     circleView.backgroundColor = color
   }
+  
+  func setMapView(color:UIColor) {
+    circleView.isHidden = true
+    self.backgroundColor = color
+  }
 }

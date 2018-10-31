@@ -16,6 +16,9 @@
 		D82385F721871687008892E1 /* ReasonSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */; };
 		D82385F921871A50008892E1 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82385F821871A50008892E1 /* Checkbox.swift */; };
 		D865FC282188281D00BB2FD1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865FC272188281D00BB2FD1 /* DashboardViewController.swift */; };
+		D865FC2C218994B300BB2FD1 /* RadarChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865FC2B218994B300BB2FD1 /* RadarChartsViewController.swift */; };
+		D865FC2F218995D000BB2FD1 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865FC2D218995D000BB2FD1 /* ChartData.swift */; };
+		D865FC30218995D000BB2FD1 /* RadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865FC2E218995D000BB2FD1 /* RadarChartView.swift */; };
 		D8B0807E217B82B400E090FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B0807D217B82B400E090FD /* AppDelegate.swift */; };
 		D8B08080217B82B400E090FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B0807F217B82B400E090FD /* ViewController.swift */; };
 		D8B08083217B82B400E090FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B08081217B82B400E090FD /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 		D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReasonSummaryTableViewCell.xib; path = Cells/ReasonSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		D82385F821871A50008892E1 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		D865FC272188281D00BB2FD1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		D865FC2B218994B300BB2FD1 /* RadarChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartsViewController.swift; sourceTree = "<group>"; };
+		D865FC2D218995D000BB2FD1 /* ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		D865FC2E218995D000BB2FD1 /* RadarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarChartView.swift; sourceTree = "<group>"; };
 		D8B0807A217B82B400E090FD /* GridViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B0807D217B82B400E090FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B0807F217B82B400E090FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 				D82385F521871687008892E1 /* ReasonSummaryTableViewCell.xib */,
 				D82385F821871A50008892E1 /* Checkbox.swift */,
 				D865FC272188281D00BB2FD1 /* DashboardViewController.swift */,
+				D865FC2B218994B300BB2FD1 /* RadarChartsViewController.swift */,
+				D865FC2D218995D000BB2FD1 /* ChartData.swift */,
+				D865FC2E218995D000BB2FD1 /* RadarChartView.swift */,
 			);
 			path = GridViewTest;
 			sourceTree = "<group>";
@@ -181,11 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D865FC2C218994B300BB2FD1 /* RadarChartsViewController.swift in Sources */,
 				D82385F621871687008892E1 /* ReasonSummaryTableViewCell.swift in Sources */,
 				D8B08080217B82B400E090FD /* ViewController.swift in Sources */,
 				D8B0809A217B890400E090FD /* ScoringDataModel.swift in Sources */,
+				D865FC2F218995D000BB2FD1 /* ChartData.swift in Sources */,
 				D82385EB2187094B008892E1 /* ReasonsViewController.swift in Sources */,
 				D82385F921871A50008892E1 /* Checkbox.swift in Sources */,
+				D865FC30218995D000BB2FD1 /* RadarChartView.swift in Sources */,
 				D8B0807E217B82B400E090FD /* AppDelegate.swift in Sources */,
 				D82385F22187166F008892E1 /* ReasonTableViewCell.swift in Sources */,
 				D865FC282188281D00BB2FD1 /* DashboardViewController.swift in Sources */,

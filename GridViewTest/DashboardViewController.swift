@@ -18,11 +18,22 @@ class DashboardViewController: UIViewController {
   @IBOutlet weak var gridLayout:CustomCollectionViewLayout!
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.title = "Dashboard"
     collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: nil),
                             forCellWithReuseIdentifier: contentCellIdentifier)
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Char", style: .done, target: self, action: #selector(addTapped))
     self.prepareDataFromDelegates()
     self.gridLayout.numberOfColumns = attributeTitleArray.count + 1
+  }
+  
+  @objc func addTapped(){
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let controller = storyboard.instantiateViewController(withIdentifier: "RadarChartsViewController") as! RadarChartsViewController
+    controller.phaseTitleArray = phaseTitleArray
+    controller.attributeTitleArray = attributeTitleArray
+    controller.gridDataSource = gridDataSource
+    controller.phasesCompleted = phasesCompleted
+    self.navigationController?.pushViewController(controller, animated: true)
   }
   func prepareDataFromDelegates () {
     self.phaseTitleArray = ["PH1","PH2","PH3","PH4","PH5", "PH6"]
